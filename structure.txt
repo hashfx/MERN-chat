@@ -1,3 +1,13 @@
 Backend using ExpressJS
 -- GET request
 -- save port number to .env file
+
+Frontend using ReactJS and Chakra UI
+-- npx create-react-app frontend
+-- Chakra UI install: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+-- wrap the whole app with <chakraProvider>
+-- 
+-- 
+-- 
+-- 
+-- 
