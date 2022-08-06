@@ -18,8 +18,10 @@ const ChatPage = () => {
 
   return (
     <div>
-      {chats.map((chat) => (
-      <div key={chat._id}>{chat.chatName}</div>  /* map through chats data and display chatName on screen */
+      {chats.map((chat) => (  // map through chats and display each chat
+        <div key={chat._id}>  {/* key: unique identifier for each chat */}
+          {chat.chatName}  {/* map through chats data and display chatName on screen */}
+        </div>
       ))}
     </div>
   );
