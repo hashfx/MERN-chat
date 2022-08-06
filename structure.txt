@@ -8,6 +8,6 @@ Frontend using ReactJS and Chakra UI
 -- wrap the whole app with <chakraProvider>
 -- 
 -- 
--- 
--- 
+Connect Frontend to Backend
+-- add proxy server of frontend script on 5000 port
 -- 
