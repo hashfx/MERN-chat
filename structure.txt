@@ -23,6 +23,11 @@ Models
     -- senderID 
     -- msgContent
     -- refOfChat
+-- User Model
+    -- name
+    -- email
+    -- password
+    -- confirmPassword
 
 MongoDB Database
 -- npm i mongoose
