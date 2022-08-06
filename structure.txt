@@ -6,7 +6,8 @@ Frontend using ReactJS and Chakra UI
 -- npx create-react-app frontend
 -- Chakra UI install: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 -- wrap the whole app with <chakraProvider>
--- 
+-- Login Page
+    -- 
 -- 
 Connect Frontend to Backend
 -- add proxy server of frontend script on 5000 port
@@ -27,7 +28,7 @@ Models
     -- name
     -- email
     -- password
-    -- confirmPassword
+    -- defaultPicture
 
 MongoDB Database
 -- npm i mongoose
