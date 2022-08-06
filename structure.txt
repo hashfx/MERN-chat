@@ -12,12 +12,17 @@ Connect Frontend to Backend
 -- add proxy server of frontend script on 5000 port
 -- 
 
-Chat Model
--- chatName
--- isGroupChat
--- groupAdmin
--- users
--- latestMessage
+Models
+--Chat Model
+    -- chatName
+    -- isGroupChat
+    -- groupAdmin
+    -- users
+    -- latestMessage
+-- Message Model
+    -- senderID 
+    -- msgContent
+    -- refOfChat
 
 MongoDB Database
 -- npm i mongoose
