@@ -11,3 +11,13 @@ Frontend using ReactJS and Chakra UI
 Connect Frontend to Backend
 -- add proxy server of frontend script on 5000 port
 -- 
+
+Chat Model
+-- chatName
+-- isGroupChat
+-- groupAdmin
+-- users
+-- latestMessage
+
+MongoDB Database
+-- npm i mongoose
