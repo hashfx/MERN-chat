@@ -6,7 +6,7 @@ const app = express();  // instance of express
 dotenv.config();
 
 // get request to / route
-// app.get('route', callback, response)
+// app.get('route', (callback, response))
 app.get('/', (req, res) => {
     res.send('API running...');  // send response
 });
