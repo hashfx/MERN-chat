@@ -6,9 +6,9 @@ Frontend using ReactJS and Chakra UI
 -- npx create-react-app frontend
 -- Chakra UI install: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 -- wrap the whole app with <chakraProvider>
--- Login Page
-    -- 
+-- Login/SignUp UI using Chakra UI
 -- 
+
 Connect Frontend to Backend
 -- add proxy server of frontend script on 5000 port
 -- 
