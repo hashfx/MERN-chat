@@ -1,6 +1,7 @@
 Backend using ExpressJS
 -- GET request
 -- save port number to .env file
+-- [optional] for beautiful terminal text: npm i colors
 
 Frontend using ReactJS and Chakra UI
 -- npx create-react-app frontend
@@ -32,3 +33,9 @@ Models
 
 MongoDB Database
 -- npm i mongoose
+-- create backend/config/db.js to connect to mongodb database
+-- import it in server.js
+
+Structure MongoDb Atlas
+-- get MongoDb URI and write in .env file
+-- 
