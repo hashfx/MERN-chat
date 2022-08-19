@@ -17,6 +17,13 @@ npm install
 
 <hr>
 
+### Support
+
+Refer:
++ [README.md]() for more documentation details
++ [directoryStructure.txt]() for directory structure and their purpose
++ [structure.txt]() for development working of app
+
 ### Contribution
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
