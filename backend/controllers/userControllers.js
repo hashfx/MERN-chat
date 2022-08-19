@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');  // for automatic error h
 const generateToken = require('../config/generateToken');
 const User = require('../models/userModel');  // import user model
 
-// logic for user registration and login
+// logic for user registration
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password, pic } = req.body;  // destructure { compenents } from the body
 
@@ -45,4 +45,26 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 });
 
-module.exports = { registerUser };
+// logic for user registration
+const authUser = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;  // take { compenents } for login
+
+    // check if user already exists in database
+    const user = await User.findOne({ email });  // find user in database
+
+    // if user exists and password is correct
+    if (user && (await user.matchPassword(password, user.password))) {
+        res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            pic: user.pic,
+            token: generateToken(user._id)
+        });
+    } else {
+        res.status(401);
+        throw new Error('Invalid Username & Password');
+    }
+});
+
+module.exports = { registerUser, authUser };

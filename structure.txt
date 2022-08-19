@@ -37,7 +37,7 @@ Models
 -- User Model
     -- name
     -- email
-    -- password
+    -- password (encrypted)
     -- defaultPicture
 
 MongoDB Database

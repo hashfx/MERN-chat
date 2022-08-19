@@ -4,6 +4,7 @@ const { chats } = require('./data/data');
 const connectDb = require('./config/db');
 const colors = require('colors');
 const userRoutes = require('./routes/userRoutes');
+const {notFound, errorHandler} = require('./middlewares/errorMiddleware');
 
 const app = express();  // instance of express
 dotenv.config();
@@ -32,6 +33,10 @@ app.get('/', (req, res) => {
 
 // end point routes for user
 app.use('/api/user', userRoutes)
+
+// error handling in case user visits undefined or non-existing path
+app.use(notFound)  // if above URLs doesn't work, it falls down to notFound
+app.use(errorHandler)  // if still throws error, it falls down to errorHandler
 
 // start express server on port 5000
 const PORT = process.env.PORT || 5000  // if PORT is not available, use port 5000
