@@ -1,13 +1,50 @@
 Backend using ExpressJS
 -- GET request
 -- save port number to .env file
+-- [optional] for beautiful terminal text: npm i colors
+-- User Authentication
+    -- handle possible errors using npm i express-async-handler
+    -- register user ('/')
+        -- check if user already exists in database else create a new user by sending a create query to the database
+        -- generate a new JWT after registring a new user :: install JWT library: npm i jsonwebtoken
+        -- setup a JWT_SECRET in .env file
+        -- 
+
 
 Frontend using ReactJS and Chakra UI
 -- npx create-react-app frontend
 -- Chakra UI install: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 -- wrap the whole app with <chakraProvider>
--- 
--- 
+-- Login/SignUp UI using Chakra UI
+    -- SignUp requires: name, email, password, passowrdConfirmation, pic, submitButton
+    -- Login requires: email, password, submitButton
+
 Connect Frontend to Backend
 -- add proxy server of frontend script on 5000 port
+-- 
+
+Models
+--Chat Model
+    -- chatName
+    -- isGroupChat
+    -- groupAdmin
+    -- users
+    -- latestMessage
+-- Message Model
+    -- senderID 
+    -- msgContent
+    -- refOfChat
+-- User Model
+    -- name
+    -- email
+    -- password (encrypted)
+    -- defaultPicture
+
+MongoDB Database
+-- npm i mongoose
+-- create backend/config/db.js to connect to mongodb database
+-- import it in server.js
+
+Structure MongoDb Atlas
+-- get MongoDb URI and write in .env file
 -- 

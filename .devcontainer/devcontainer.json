@@ -16,7 +16,9 @@
 				"dbaeumer.vscode-eslint",
 				"mongodb.mongodb-vscode",
 				"rangav.vscode-thunder-client",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"dsznajder.es7-react-js-snippets",
+				"eridem.vscode-postman"
 			]
 		}
 	},

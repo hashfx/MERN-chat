@@ -1,0 +1,14 @@
+backend/
+    config/
+        db.js
+    controllers/
+    data/
+    models/
+    routes/
+frontend/
+    public/
+    src/
+        components/
+            Authentication/
+        Pages/
+
