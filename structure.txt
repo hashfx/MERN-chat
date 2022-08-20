@@ -8,7 +8,6 @@ Backend using ExpressJS
         -- check if user already exists in database else create a new user by sending a create query to the database
         -- generate a new JWT after registring a new user :: install JWT library: npm i jsonwebtoken
         -- setup a JWT_SECRET in .env file
-        -- todo: 25:02 add signup functionality to backend
 
 
 Frontend using ReactJS and Chakra UI

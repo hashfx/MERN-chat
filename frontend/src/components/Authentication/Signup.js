@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, Show, VStack } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, Show, VStack, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 const Signup = () => {
@@ -10,9 +10,48 @@ const Signup = () => {
   const [password, setPassword] = useState()
   const [passwordConfirmation, setPasswordConfirmation] = useState()
   const [pic, setPic] = useState()
+  const [loading, setLoading] = useState(false)
+  const toast = useToast()
 
   const handleClick = () => setShow(!show);
-  const postDetails = (pics) => { };
+
+  const postDetails = (pics) => {
+    setLoading(true)
+    // check if isUndefined
+    if (pics === undefined) {
+      // add a toast
+      toast({
+        title: 'Please upload a profile picture',
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom"
+      })
+      return;  // do nothing if image is undefined
+    }
+    if (pics.type === "image/jpeg" || pics.type === "image/png") {  // check if image format is image and supported
+      const data = new FormData()
+      data.append('file', pics)  // add file field which would have pic
+      data.append('upload_preset', 'mern-chat')  // preset for cloudinary
+      data.append('cloud_name', 'hashfx')  // cloudinary name
+      // api call to cloudinary api
+      fetch('https://api.cloudinary.com/v1_1/hashfx/image/upload', {
+        method: 'post',
+        body: data
+      }).then(res => res.json())  // convert response into json
+        .then(data => {
+          setPic(data.url.toString()) // set pic to picState from above json
+          console.log(data.url.toString())
+          setLoading(false)
+        })
+        .catch((err) => {  // handle error if any
+          console.log(err);
+          setLoading(false)
+        })
+    }else{  // if format is not image
+      // toast here 30:36 JWT
+    }
+  };
   const submitHandler = () => { };
 
 
