@@ -16,6 +16,10 @@ Frontend using ReactJS and Chakra UI
 -- wrap the whole app with <chakraProvider>
 -- Login/SignUp UI using Chakra UI
     -- SignUp requires: name, email, password, passowrdConfirmation, pic, submitButton
+        -- post pic, select from cloudinary and show toast if successful or not
+        -- post cloudinary image url to MongoDB
+        -- verify if all fields are filled and passwords match with passwordConfirm
+        -- SignUp button should be disabled until all fields are filled
     -- Login requires: email, password, submitButton
 
 Connect Frontend to Backend
