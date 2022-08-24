@@ -67,11 +67,22 @@ const authUser = asyncHandler(async (req, res) => {
     }
 });
 
-// search users through queries: /api/user?search={variable}
-const allUsers = asyncHandler(async(req, res) => {
+// api to search users through queries: /api/user?search={variable}
+const allUsers = asyncHandler(async (req, res) => {
     // take variable from query
-    const keyword = req.query.search
-    console.log(keyword);
+    const keyword = req.query.search ? {
+        // if there is any query, search user in their name and email
+        $or: [  // $or operator of MongoDB: either of 2 conditions must be true
+            { name: { $regex: req.query.search, $options: "i" } },  // "i": allow case sensitive
+            { email: { $regex: req.query.search, $options: "i" } }
+        ]
+    } : {};  // else do nothing
+    // console.log(keyword);
+
+    // query database
+    // except the current logged in user, return all matched result
+    const users = await User.find(keyword).find({_id:{$ne:req.user._id}})
+    res.send(users)  // return a response
 })
 
 module.exports = { registerUser, authUser, allUsers };
