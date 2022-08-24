@@ -70,7 +70,7 @@ const authUser = asyncHandler(async (req, res) => {
 // search users through queries: /api/user?search={variable}
 const allUsers = asyncHandler(async(req, res) => {
     // take variable from query
-    const keyword = req.query
+    const keyword = req.query.search
     console.log(keyword);
 })
 
