@@ -67,4 +67,11 @@ const authUser = asyncHandler(async (req, res) => {
     }
 });
 
-module.exports = { registerUser, authUser };
+// search users through queries: /api/user?search={variable}
+const allUsers = asyncHandler(async(req, res) => {
+    // take variable from query
+    const keyword = req.query
+    console.log(keyword);
+})
+
+module.exports = { registerUser, authUser, allUsers };

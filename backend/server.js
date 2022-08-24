@@ -4,6 +4,7 @@ const { chats } = require('./data/data');
 const connectDb = require('./config/db');
 const colors = require('colors');
 const userRoutes = require('./routes/userRoutes');
+const chatRoutes = require("./routes/chatRoutes");
 const {notFound, errorHandler} = require('./middlewares/errorMiddleware');
 
 const app = express();  // instance of express
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 
 // end point routes for user
 app.use('/api/user', userRoutes)
+app.use("/api/chat", chatRoutes);
 
 // error handling in case user visits undefined or non-existing path
 app.use(notFound)  // if above URLs doesn't work, it falls down to notFound
