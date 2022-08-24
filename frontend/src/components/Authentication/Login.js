@@ -18,7 +18,7 @@ const Login = () => {
     const handleClick = () => setShow(!show);
     const submitHandler = async () => {
         setLoading(true);
-        if (!email || !password) {
+        if (!email || !password) {  // if any field is empty
             toast({
                 title: "Please Fill all the Fields",
                 status: "warning",
@@ -38,6 +38,7 @@ const Login = () => {
                 },
             };
 
+            // make request to /api/user/login
             const { data } = await axios.post(
                 "/api/user/login",
                 { email, password },
@@ -52,10 +53,11 @@ const Login = () => {
                 isClosable: true,
                 position: "bottom",
             });
+            // store session variable if successfully logged in
             localStorage.setItem("userInfo", JSON.stringify(data));
             setLoading(false);
-            history.push("/chats");
-        } catch (error) {
+            history.push("/chats");  // push user to chats page
+        } catch (error) {  // if any error occured
             toast({
                 title: "Error Occured!",
                 description: error.response.data.message,
@@ -90,7 +92,7 @@ const Login = () => {
             </FormControl>
 
 
-            <Button colorScheme='blue' width="100%" style={{ marginTop: 15 }} onClick={submitHandler}>
+            <Button colorScheme='blue' width="100%" style={{ marginTop: 15 }} onClick={submitHandler} isLoading={loading}>
                 Login
             </Button>
 
