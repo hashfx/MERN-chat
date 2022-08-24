@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 // end point routes for user
 app.use('/api/user', userRoutes)
-app.use("/api/chat", chatRoutes);
+// app.use("/api/chat", chatRoutes);
 
 // error handling in case user visits undefined or non-existing path
 app.use(notFound)  // if above URLs doesn't work, it falls down to notFound
