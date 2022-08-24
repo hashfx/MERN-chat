@@ -81,7 +81,7 @@ const allUsers = asyncHandler(async (req, res) => {
 
     // query database
     // except the current logged in user, return all matched result
-    const users = await User.find(keyword).find({_id:{$ne:req.user._id}})
+    const users = await User.find(keyword)  // .find({_id:{$ne:req.user._id}})
     res.send(users)  // return a response
 })
 
