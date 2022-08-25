@@ -1,4 +1,4 @@
-const expressAsyncHandler = require("express-async-handler");
+const asyncHandler = require("express-async-handler");
 const Chat = require('../models/chatModel')
 
 // create or fetch one-on-one chat
