@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Chat = require('../models/chatModel')
+const User = require('../models/userModel')
 
 // create or fetch one-on-one chat
 const accessChat = asyncHandler(async (req, res) => {
@@ -51,6 +52,16 @@ const accessChat = asyncHandler(async (req, res) => {
         }
     }
 
+})
+
+const fetchChats = asyncHandler(async (req, res) => {
+    try {
+        // check which user is logged in
+        // fetch chat
+        Chat.find({ users: { $elemMatch: { eq: req.user._id } } }).then((result) => res.send(result))
+    } catch (error) {
+
+    }
 })
 
 module.exports = { accessChat }
