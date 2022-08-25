@@ -47,8 +47,10 @@ const accessChat = asyncHandler(async (req, res) => {
             res.status(200).send(FullChat)
         } catch (error) {
             res.status(400)
-            throw new Error(error.message)  // todo 22:50
+            throw new Error(error.message)
         }
     }
 
 })
+
+module.exports = { accessChat }
