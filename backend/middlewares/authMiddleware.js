@@ -14,7 +14,7 @@ const protect = asyncHandler(async (req, res, next) => {  // next: to move to ne
 
             // decodes token ID
             const decoded = jwt.verify(token, process.env.JWT_SECRET);  // verify token
-            req.user = await User.findById(decoded.id).select("-password");  // find user in DB and return it without database
+            req.user = await User.findById(decoded.id).select("-password");  // find user in DB and return it without password
             next();  // move to next operation
         } catch (error) {
             res.status(401)

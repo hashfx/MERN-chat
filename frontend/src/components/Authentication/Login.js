@@ -30,7 +30,7 @@ const Login = () => {
             return;
         }
 
-        // console.log(email, password);
+        // console.log(email, password);  // displays non-encrypted password
         try {
             const config = {
                 headers: {
@@ -80,10 +80,10 @@ const Login = () => {
 
             <FormControl id='password' isRequired>
                 <FormLabel>Password</FormLabel>
-                <InputGroup>
+                <InputGroup size="md">
                     <Input type={show ? "text" : 'password'} placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                    <InputRightElement width='4.5em'>
+                    <InputRightElement width='4.5rem'>
                         <Button h="1.75rem" size="sm" onClick={handleClick}>
                             {show ? "Hide" : "Show"}
                         </Button>
